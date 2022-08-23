@@ -14,7 +14,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class ojdbcEx_02 {
+public class OjdbcEx_02 {
 
 	//OJDBC 드라이버
 	private static final String DRIVER = "oracle.jdbc.driver.OracleDriver";
@@ -28,7 +28,6 @@ public class ojdbcEx_02 {
 	private static Connection conn = null;
 	private static Statement st = null;
 	private static ResultSet rs = null;
-	
 	
 	
 	public static void main(String[] args) {
@@ -134,7 +133,6 @@ public class ojdbcEx_02 {
 		} finally {
 			try {
 				// --- 자원 해제 ---
-				
 				if( st!=null && !st.isClosed() ) st.close();
 				if( conn!=null && !conn.isClosed() ) conn.close();
 				//-------------------
@@ -143,9 +141,7 @@ public class ojdbcEx_02 {
 			}
 		}
 		
-		
-		
-		
+			
 		
 	}
 

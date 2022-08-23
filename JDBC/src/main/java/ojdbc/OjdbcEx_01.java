@@ -16,7 +16,6 @@ import java.sql.Statement;
 
 
 public class OjdbcEx_01 {
-
 	public static void main(String[] args) {
 
 		
@@ -27,14 +26,13 @@ public class OjdbcEx_01 {
 			e.printStackTrace();
 		}
 		
+		
 		//--- ODJB 사용에 필요한 변수들 ---
 		
 		Connection conn = null;	//DB연결 객체 (접속 객체)
 		
-		
 		Statement st = null;	//SQL구문 저장 및 SQL구문 수행 객체
 		ResultSet rs = null;	//조회 결과 반환 객체
-		
 		
 		//-----------------------------------
 		
@@ -55,7 +53,7 @@ public class OjdbcEx_01 {
 			rs = st.executeQuery("SELECT * FROM emp ORDER BY empno");
 			
 //		4. 결과값 처리
-			//조회괸 결과행을 처음부터 한 행씩 마지막까지 반복적으로 확인할 수 있도록 작성한다
+			//조회된 결과행을 처음부터 한 행씩 마지막까지 반복적으로 확인할 수 있도록 작성한다
 			
 			//rs.next()
 			//	-> 조회결과를 순차적으로 한 행씩 참조한다
@@ -63,7 +61,6 @@ public class OjdbcEx_01 {
 			
 			//	-> 다음 next()로 조회할 행이 있으면 true반환
 			//	-> 더이상 조회할 행이 없을 경우 false 반환
-			
 			
 			while( rs.next() ) { 	
 //				System.out.print( rs.getInt("empno") + ", ");	
@@ -91,9 +88,9 @@ public class OjdbcEx_01 {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
+			
 //		5. 연결 종료 
 			//역순으로 클로즈 해줘야 함.
-			
 				try {
 					if( rs!=null && !rs.isClosed() ) rs.close();
 					if( st!=null && !st.isClosed() ) st.close();
@@ -101,11 +98,9 @@ public class OjdbcEx_01 {
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
-			
-			
+				
 		}
 	
-		
 		
 	}
 
