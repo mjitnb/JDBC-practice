@@ -4,10 +4,15 @@ import java.util.Date;
 
 public class Emp {
 
-	//선택내용 전부 소문자 변환 : ctrl + shift = y
-	//선택내용 전부 대문자 변환 : ctrl + shift = x
+	//선택 내용 전부 소문자로 변환하는 단축키 : ctrl + shift + y
+	//선택 내용 전부 대문자로 변환하는 단축키 : ctrl + shift + x
+
+	//모든 멤버필드 초기화하는 생성자 자동 생성 단축키 : alt + shift + s, o
+	//toString() 메소드 자동 생성 단축키 : alt + shift + s, s
+	//getters, setters 자동 생성 단축키 : alt + shift + s, r
 	
-	
+	//-----------------------------------------------------------------------
+		
 	private int empno;
 	private String ename;
 	private String job;

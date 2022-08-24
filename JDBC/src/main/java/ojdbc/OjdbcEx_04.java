@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class OjdbcEx_04 {
 
-	//OJDBC 드라이버
+		//OJDBC 드라이버
 		private static final String DRIVER = "oracle.jdbc.driver.OracleDriver";
 		
 		//DB연결 정보
@@ -20,9 +20,7 @@ public class OjdbcEx_04 {
 		
 		//OJDBC 객체
 		private static Connection conn = null;	//DB연결객체
-		
 		private static PreparedStatement ps = null;	//SQL 수행객체
-		
 		private static ResultSet rs = null;	//조회결과 수행객체
 	
 	
@@ -36,13 +34,12 @@ public class OjdbcEx_04 {
 			e.printStackTrace();
 		}
 		
+		
+		
 		//--- 조회할 job 입력받기 ---
 		Scanner sc = new Scanner(System.in);
 		System.out.print("조회할 job 입력 : ");
 		String job = sc.nextLine();
-		
-		
-		
 		
 		//--- SQL 작성 ---
 		String sql = "";
@@ -50,15 +47,20 @@ public class OjdbcEx_04 {
 		sql += " WHERE upper(job) = upper( ? )";	
 		sql += " ORDER BY empno";
 		
+		
+		
 		try {
 			//--- DB 연결 ---
 			conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+			
+			
 			
 			//--- SQL 수행 객체 ---
 //			st = conn.createStatement();	//SQL 수행 객체 생성
 //			rs = st.executeQuery(sql);	//SQL수행 및 결과 저장
 //			
 			ps = conn.prepareStatement(sql); //SQL 수행 객체 생성
+			
 			
 			//SQL구문의 첫 번째 ? 를 job 변수의 값으로 치환한다
 			//	** 문자 데이터일 경우 .setString()은 ''작은 따옴표를 자동으로 씌워준다
@@ -94,12 +96,3 @@ public class OjdbcEx_04 {
 	}
 
 }
-
-
-
-
-
-
-
-
-

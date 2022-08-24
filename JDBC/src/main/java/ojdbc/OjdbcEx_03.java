@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class OjdbcEx_03 {
 
-	//OJDBC 드라이버
+		//OJDBC 드라이버
 		private static final String DRIVER = "oracle.jdbc.driver.OracleDriver";
 		
 		//DB연결 정보
@@ -22,9 +22,9 @@ public class OjdbcEx_03 {
 		private static Connection conn = null;	//DB연결객체
 		
 		private static Statement st = null;	//SQL수행 객체
-		private static PreparedStatement ps = null;	//SQL 수행객체
+		private static PreparedStatement ps = null;	//SQL 수행 객체
 		
-		private static ResultSet rs = null;	//조회결과 수행객체
+		private static ResultSet rs = null;	//조회 결과 객체
 	
 	
 	
@@ -37,12 +37,12 @@ public class OjdbcEx_03 {
 			e.printStackTrace();
 		}
 		
+		
+		
 		//--- 조회할 job 입력받기 ---
 		Scanner sc = new Scanner(System.in);
 		System.out.print("조회할 job 입력 : ");
 		String job = sc.nextLine();
-		
-		
 		
 		
 		//--- SQL 작성 ---
@@ -51,6 +51,8 @@ public class OjdbcEx_03 {
 		sql += " WHERE upper(job) = upper('" + job + "')";
 		//데이터에 대소문자 섞여있어서 조회 시 검색안되는 걸 막기 위해 둘 다 대문자로 upper
 		sql += " ORDER BY empno";
+		
+		
 		
 		try {
 			//--- DB 연결 ---
@@ -86,12 +88,3 @@ public class OjdbcEx_03 {
 	}
 
 }
-
-
-
-
-
-
-
-
-
